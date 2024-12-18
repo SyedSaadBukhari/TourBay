@@ -1,0 +1,43 @@
+.booking-form-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  margin: 0 5rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+
+  .form-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #232323;
+  }
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .form-field .MuiOutlinedInput-root {
+    border-radius: 1rem;
+  }
+}
+
+.confirm-booking-btn {
+  background-color: #ed6c02 !important;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  width: 100%;
+  &:hover {
+    background-color: #d84f1a;
+  }
+}

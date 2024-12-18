@@ -1,0 +1,108 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0 auto;
+  position: relative;
+
+  .navbar-logo {
+    height: 40px;
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+
+    a {
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+
+  .desktop-button {
+    .nav-btn {
+      background-color: #ed6c02;
+    }
+  }
+
+  .mobile-button {
+    display: none;
+  }
+
+  &__button.MuiButton-root {
+    background-color: #f16b51;
+    color: black;
+  }
+
+  @media screen and (max-width: 800px) {
+    .hamburger {
+      display: block;
+      order: 2;
+    }
+
+    .desktop-button {
+      display: none;
+    }
+
+    .mobile-button {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .navbar-mobile-container {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .navbar-links {
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+
+      li {
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}

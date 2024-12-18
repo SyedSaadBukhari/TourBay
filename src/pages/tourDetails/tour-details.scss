@@ -1,0 +1,16 @@
+.tour-detail-page {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.book-now-btn {
+  background-color: #ed6c02 !important;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  &:hover {
+    background-color: #d84f1a;
+  }
+}

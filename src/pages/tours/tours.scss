@@ -1,0 +1,14 @@
+.view-details-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  background-color: #ed6c02 !important;
+  color: white;
+  width: 90%;
+  text-align: center;
+  height: 40px;
+}
