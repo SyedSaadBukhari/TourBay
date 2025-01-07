@@ -1,92 +1,68 @@
 import React from "react";
-
 import Link from "next/link";
-import { Button, Box, Grid } from "@mui/material";
-
+import { Button, Box, Grid, Typography, Container } from "@mui/material";
 import "./home.scss";
 
 const HomePage = () => {
   return (
-    <main className="home-page">
-      <section className="homepage-text-content">
-        <h1 className="home-title">
-          <img
-            src="/underline.png"
-            alt="underline"
-            className="underline-header"
-          />
-          Explore The New World With Tourbay
-        </h1>
+    <Box className="home-page">
+      <img
+        className="home-background"
+        src="/background.png"
+        alt="beige-colored background"
+      />
+      <Container maxWidth="xl" sx={{ mt: 4 }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6} className="text-content">
+            <Box className="title-wrapper">
+              <Typography variant="h1" className="home-title">
+                Explore The New World
+                <Box component="span" className="subtitle">
+                  With Tourbay
+                </Box>
+              </Typography>
+            </Box>
 
-        <p className="home-description">
-          No matter where in the world you want to go, we can help get you there
-          and make your tour a stupendous memory.
-        </p>
+            <Typography className="home-description">
+              No matter where in the world you want to go, we can help get you
+              there and make your tour a stupendous memory.
+            </Typography>
 
-        <section className="desktop-button">
-          <Button
-            variant="contained"
-            className="explore-tours-btn"
-            size="large"
-            component={Link}
-            href="/tours"
-            sx={{ textDecoration: "none" }}
-          >
-            Explore Tours
-          </Button>
-        </section>
-      </section>
-
-      <section className="home-images">
-        <img
-          className="home-background"
-          src="/background.png"
-          alt="beige-colored background"
-        />
-
-        <img className="backline" src="/backline.png" alt="backline" />
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                height: { xs: "300px", md: "600px" },
-                position: "relative",
-                overflow: "hidden",
-                borderRadius: "8px",
-              }}
+            <Button
+              variant="contained"
+              size="large"
+              className="explore-now-btn"
+              component={Link}
+              href="/tours"
             >
-              <img src="/img1.png" alt="Santorini, Greece" />
+              Explore Now
+            </Button>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <Box className="images-container">
+              <Grid container spacing={2}>
+                <Grid item xs={12} md={8}>
+                  <Box className="main-image">
+                    <img src="/img1.png" alt="Santorini, Greece" />
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Box className="small-images">
+                    <Box className="small-image">
+                      <img src="/img2.png" alt="Desert road with vintage van" />
+                    </Box>
+                    <Box className="small-image">
+                      <img src="/img3.png" alt="City street scene" />
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
             </Box>
           </Grid>
-          <Grid item xs={12} md={2} container direction="column" spacing={4}>
-            <Grid item xs={5}>
-              <Box
-                sx={{
-                  height: { xs: "200px", md: "260px" },
-                  position: "relative",
-                  overflow: "hidden",
-                  borderRadius: "8px",
-                }}
-              >
-                <img src="/img2.png" alt="Desert road with vintage van" />
-              </Box>
-            </Grid>
-            <Grid item xs={5}>
-              <Box
-                sx={{
-                  height: { xs: "200px", md: "260px" },
-                  position: "relative",
-                  overflow: "hidden",
-                  borderRadius: "8px",
-                }}
-              >
-                <img src="/img3.png" alt="City street scene" />
-              </Box>
-            </Grid>
-          </Grid>
         </Grid>
-      </section>
-    </main>
+      </Container>
+    </Box>
   );
 };
 

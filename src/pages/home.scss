@@ -1,63 +1,114 @@
 .home-page {
   display: grid;
-  height: 100vh;
-  grid-template-columns: 1fr 1fr;
-  justify-items: end;
+  background-color: #fff;
+  position: relative;
 
-  .homepage-text-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .home-background {
+    position: absolute;
+    top: -15%;
+    right: -2.5%;
+    width: 55%;
+    height: 150%;
+  }
 
-    .home-title {
-      font-size: 5rem;
-      font-weight: 600;
-      color: black;
-      line-height: 7rem;
-      text-align: left;
-      font-family: 'Poppins', sans-serif;
-      position: relative;
+  .text-content {
+    padding-top: 3rem;
+    position: relative;
+    z-index: 1;
 
-      .underline-header {
-        position: absolute;
-        bottom: 45%;
-        width: 30%;
-      }
-    }
-
-    .home-description {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: black;
-      text-align: left;
-      line-height: 2.25rem;
-      font-family: 'Poppins', sans-serif;
-      max-width: 36rem;
-    }
-
-    .desktop-button {
-      .explore-tours-btn {
-        background-color: #ed6c02;
-      }
+    @media (max-width: 960px) {
+      padding-top: 2rem;
     }
   }
 
-  .home-images {
-    display: flex;
-    align-items: center;
+  .title-wrapper {
+    margin-bottom: 2rem;
+  }
 
-    .home-background {
-      position: absolute;
-      top: -20%;
-      right: -50%;
-      width: 91%;
-      height: 70rem;
+  .home-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: #1a1b4b;
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+
+    .subtitle {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .home-description {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 2rem;
+  }
+
+  .explore-now-btn {
+    background-color: #f47458 !important;
+    color: white !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 8px !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+
+    &:hover {
+      background-color: darken(#f47458, 10%) !important;
+    }
+  }
+
+  .images-container {
+    position: relative;
+    z-index: 1;
+    right: 0;
+    top: 20%;
+  }
+
+  .main-image {
+    height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @media (max-width: 960px) {
+      height: 300px;
     }
 
-    .backline {
-      position: absolute;
-      top: -10%;
-      right: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+
+    @media (max-width: 960px) {
+      flex-direction: row;
+      margin-top: 1rem;
+    }
+
+    .small-image {
+      height: calc(50% - 0.5rem);
+      border-radius: 16px;
+      overflow: hidden;
+
+      @media (max-width: 960px) {
+        height: 200px;
+        width: 50%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
