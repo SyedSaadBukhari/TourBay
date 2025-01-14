@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   Container,
   TextField,
@@ -59,25 +58,25 @@ const DualMonthDatePicker = ({
   value: dayjs.Dayjs | null;
   onChange: (date: dayjs.Dayjs | null) => void;
 }) => {
-  const currentMonth = value ? dayjs(value) : dayjs();
-  const nextMonth = currentMonth.add(1, "month");
+  const currentDate = dayjs();
 
   return (
-    <div className="flex">
+    <div style={{ display: "flex", gap: "16px" }}>
       <DateCalendar
         value={value}
         onChange={onChange}
-        defaultValue={currentMonth}
+        defaultValue={currentDate}
         views={["day"]}
         showDaysOutsideCurrentMonth={false}
-        className="border-r border-gray-200"
+        shouldDisableDate={(date) => date.isBefore(currentDate, "day")}
       />
       <DateCalendar
         value={value}
         onChange={onChange}
-        defaultValue={nextMonth}
+        defaultValue={currentDate.add(1, "month")}
         views={["day"]}
         showDaysOutsideCurrentMonth={false}
+        shouldDisableDate={(date) => date.isBefore(currentDate, "day")}
       />
     </div>
   );

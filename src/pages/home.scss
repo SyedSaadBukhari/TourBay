@@ -1,14 +1,18 @@
 .home-page {
-  display: grid;
-  background-color: #fff;
-  position: relative;
+  padding: 0 3rem;
 
   .home-background {
     position: absolute;
-    top: -15%;
-    right: -2.5%;
+    top: -1%;
+    right: 0;
     width: 55%;
-    height: 150%;
+    height: 950px;
+  }
+
+  .background-wave {
+    position: absolute;
+    right: 0;
+    top: -10%;
   }
 
   .text-content {
@@ -32,11 +36,6 @@
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
     position: relative;
-
-    .subtitle {
-      display: block;
-      margin-top: 0.5rem;
-    }
   }
 
   .home-description {
@@ -63,12 +62,11 @@
   .images-container {
     position: relative;
     z-index: 1;
-    right: 0;
-    top: 20%;
+    padding-top: 10rem;
   }
 
   .main-image {
-    height: 600px;
+    height: 700px;
     border-radius: 16px;
     overflow: hidden;
 
@@ -77,7 +75,6 @@
     }
 
     img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
     }
@@ -105,7 +102,6 @@
       }
 
       img {
-        width: 100%;
         height: 100%;
         object-fit: cover;
       }
